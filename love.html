@@ -19,7 +19,7 @@
 </head>
 
 <body>
-<audio autoplay="autopaly" loop="loop">
+<audio autoplay="autopaly" id="music" loop="loop">
 	<source src="./mp3/UntilYou.mp3" type="audio/mp3" />
 </audio>
 
@@ -65,6 +65,11 @@
 		
 	</div>
 	<script type="text/javascript">
+	    var media = document.getElementById("music");
+		media.src = "./mp3/UntilYou.mp3"; 
+		media.play();
+		
+	
 		var offsetX = $("#loveHeart").width() / 2;
 		var offsetY = $("#loveHeart").height() / 2 - 55;
 		var displayMode = 1;
