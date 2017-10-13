@@ -65,9 +65,20 @@
 		
 	</div>
 	<script type="text/javascript">
-	    var media = document.getElementById("music");
-		media.src = "./mp3/UntilYou.mp3"; 
-		media.play();
+	   	
+		var shakeMusic = document.getElementById("music");
+
+		// 微信提供的事件，微信浏览器内部初始化完成后
+		document.addEventListener("WeixinJSBridgeReady", function () {
+		  shakeMusic.load();
+		}, false);
+
+		// 监听手机摇动
+		window.addEventListener('shake', shakeEventDidOccur, false);
+
+		function shakeEventDidOccur(obj) {
+		  shakeMusic.play();
+		}
 		
 	
 		var offsetX = $("#loveHeart").width() / 2;
